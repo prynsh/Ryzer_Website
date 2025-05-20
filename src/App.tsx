@@ -1,20 +1,17 @@
 
 import './App.css'
+import Example from './component/FloatingPhone'
 import Hero from './component/Hero'
-import Topbar from './component/Topbar'
 
 function App() {
 
   return (
     <>
-      <div className=' min-h-screen'>
+      <div className=' min-h-screen space-y-10'>
         <div>
-        <Topbar/>
-        </div>
-        <div>
-
         <Hero/>
         </div>
+        
         </div>
     </>
   )

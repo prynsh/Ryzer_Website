@@ -3,7 +3,7 @@ import logo from "../assets/Ryzer.png";
 import AnimatedButton from "./HoverButton";
 const Topbar = () => {
   return (
-    <div className="bg-white px-10 p-5 items-center flex justify-between" >
+    <div className="bg-white px-10 p-5 items-center flex justify-between fixed top-0 left-0 right-0 z-50 ">
       <div className="flex space-x-1 items-center text-black">
         <div>
         <img src={logo} height={50} width={50}></img>
