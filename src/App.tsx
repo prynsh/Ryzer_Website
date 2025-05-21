@@ -1,6 +1,5 @@
 
 import './App.css'
-import Example from './component/FloatingPhone'
 import Hero from './component/Hero'
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
         <div>
         <Hero/>
         </div>
-        
+        <div></div>
         </div>
     </>
   )

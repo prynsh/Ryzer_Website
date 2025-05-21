@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@500&display=swap');
 @import "tailwindcss";
 
+.font-phudu {
+  font-family: 'Phudu Medium', cursive;
+}
+/* *{
+  font-family: "Phudu Medium";
+} */
 
 .button{
   display: inline-grid;
@@ -15,6 +22,8 @@
   overflow: hidden;
 }
 h1 {
-  font-family: "Phudu Medium", sans-serif;
+  font-family: "Phudu Medium";
 }
+
+
 
