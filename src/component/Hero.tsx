@@ -53,8 +53,13 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[1000px] bg-white pt-40 space-y-5">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+   <div className="relative w-full min-h-[1000px] pt-40 space-y-5 overflow-hidden">
+  {/* Grid background overlay */}
+  <div className="absolute inset-0 z-0 pointer-events-none 
+    bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] 
+    bg-[size:14px_24px] 
+    [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]
+  "></div>
 
       <div className="relative z-10 text-center h-full space-y-5">
         <h1 className="h1 text-8xl font-bold text-gray-800">
@@ -96,19 +101,21 @@ const Hero = () => {
             Experience real estate like crypto
           </p>
         </div>
-        <div>
+        <div className="space-y-8">
           <h1 className="h1 text-7xl font-bold text-gray-800">
             THE FUTURE OF <br /> REAL WORLD ASSETS
           </h1>
           <TextReveal
-  text={`Explore the power of investing in tokenized real world assets\nand discover the next chapter in your investing journey`}
-  fromColor="#D1D5DB"
-  toColor="#000000"
-/>
-
+            text={`Explore the power of investing in tokenized real world assets\nand discover the next chapter in your investing journey`}
+            fromColor="#D1D5DB"
+            toColor="#000000"
+           className="text-xl"/>
+        </div>
+        <div className="">
+          <Features />
         </div>
         <div>
-            <Features/>
+            Marquee component
         </div>
       </div>
     </div>

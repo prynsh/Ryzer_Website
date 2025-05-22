@@ -1,5 +1,3 @@
- // Or use your own icon component
-
 const featuresData = [
   {
     title: "BROWSE ASSETS",

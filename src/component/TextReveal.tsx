@@ -35,48 +35,38 @@ const TextReveal: React.FC<TextRevealProps> = ({
         stagger: 0.02,
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",   // Start animation when the top of container hits 80% of viewport
-          end: "bottom 70%",  // End when bottom of container hits 20% of viewport
-          scrub: true,        // Link animation progress to scroll
+          start: "top 80%", 
+          end: "bottom 70%",
+          scrub: true, 
         },
       }
     );
 
     ScrollTrigger.refresh();
   }, [fromColor, toColor]);
-  
 
   return (
     <div ref={containerRef} className={className}>
       {text.split("").map((char, index) => {
-  if (char === "\n") {
-    return (
-      <span
-        key={index}
-        ref={(el) => el && (charsRef.current[index] = el)}
-        className="block h-6" // acts like a <br />
-        aria-hidden="true"
-      >
-        &nbsp;
-      </span>
-    );
-  }
+        if (char === "\n") {
+          return <br key={index} />;
+        }
 
-  return (
-    <span
-      key={index}
-      ref={(el) => el && (charsRef.current[index] = el)}
-      className="inline-block text-transparent bg-clip-text bg-[length:200%_100%] bg-[position-x:100%]"
-      style={{
-        backgroundImage: `linear-gradient(to right, ${toColor} 50%, ${fromColor} 50%)`,
-      }}
-    >
-      {char === " " ? "\u00A0" : char}
-    </span>
-  );
-})}
-
-
+        return (
+          <span
+            key={index}
+            ref={(el) => {
+              if (el) charsRef.current[index] = el;
+            }}
+            className="inline-block text-transparent bg-clip-text bg-[length:200%_100%] bg-[position-x:100%]"
+            style={{
+              backgroundImage: `linear-gradient(to right, ${toColor} 50%, ${fromColor} 50%)`,
+            }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </span>
+        );
+      })}
     </div>
   );
 };

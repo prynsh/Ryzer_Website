@@ -1,4 +1,3 @@
-import React from 'react';
 import rippleLogo from '../assets/Ripple-min.png';
 import xdcLogo from '../assets/XDC-min-1.png';
 import mycowLogo from '../assets/MyCow-IO-Main-Logo-Horizontal.png';

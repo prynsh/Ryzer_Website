@@ -1,4 +1,4 @@
-// components/AnimatedButton.tsx
+
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -17,7 +17,7 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ children, className = "
 
     const tl = gsap.timeline({ paused: true });
 
-    tl.to(spanRef.current, { duration: 0.5, yPercent: -150, ease: "power2.in" });
+    tl.to(spanRef.current, { duration: 0.08, yPercent: -150, ease: "power2.in" });
     tl.set(spanRef.current, { yPercent: 150 });
     tl.to(spanRef.current, { duration: 0.2, yPercent: 0 });
 
