@@ -6,7 +6,7 @@ import Topbar from './component/Topbar.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Topbar/>
+    
     <App />
   </StrictMode>,
 )

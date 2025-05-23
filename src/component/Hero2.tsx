@@ -1,4 +1,4 @@
-import React from 'react'
+
 import TextReveal from './TextReveal'
 import Cursor from './Cursor';
 import FeatureCards from './FeatureCards';

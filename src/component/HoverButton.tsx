@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
@@ -6,9 +5,15 @@ type AnimatedButtonProps = {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  isDarkBg?: boolean; // Add this prop
 };
 
-const AnimatedButton: React.FC<AnimatedButtonProps> = ({ children, className = "", onClick }) => {
+const AnimatedButton: React.FC<AnimatedButtonProps> = ({
+  children,
+  className = "",
+  onClick,
+  isDarkBg = false, // Default to false
+}) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const spanRef = useRef<HTMLSpanElement>(null);
 
@@ -33,7 +38,21 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ children, className = "
     <button
       ref={buttonRef}
       onClick={onClick}
-      className={`inline-grid border border-black rounded-full px-4 py-1 items-center w-[130px] mx-[5px] my-[10px] text-white bg-[#434242] overflow-hidden  relative h-[40px] ${className}`}
+      className={`
+        inline-grid
+        rounded-full
+        px-4 py-1
+        items-center
+        w-[130px]
+        mx-[5px]
+        my-[10px]
+        overflow-hidden
+        relative
+        h-[40px]
+        transition-colors duration-300
+        ${isDarkBg ? 'text-black border-black bg-white' : 'text-white border-white bg-[#434242]'}
+        ${className}
+      `}
     >
       <span ref={spanRef} className="relative block z-10">
         {children}

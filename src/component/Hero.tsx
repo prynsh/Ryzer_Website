@@ -54,18 +54,28 @@ const Hero = () => {
   }, []);
 
   return (
-   <div className="relative w-full min-h-[1000px] pt-40 space-y-5 overflow-hidden">
-  {/* Grid background overlay */}
-  <div className="absolute inset-0 z-0 pointer-events-none 
-    bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] 
-    bg-[size:14px_24px] 
-    [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]
-  "></div>
+   <div className="relative w-full overflow-hidden">
 
-      <div className="relative z-10 text-center h-full space-y-5">
-        <h1 className="h1 text-8xl font-bold text-gray-800">
-          INVEST IN WHAT'S <br /> REAL & VISIBLE
-        </h1>
+
+      <div className="relative z-10 text-center h-full ">
+        <div className="relative w-full h-[400px]">
+    <div
+      className="absolute inset-0 z-0 pointer-events-none"
+      style={{
+        backgroundImage: "url('https://www.ryzer.app/wp-content/uploads/2024/09/BG-6.png')",
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+      }}
+    ></div>
+
+    {/* h1 text stays above the background image */}
+    <h1 className="h1 text-8xl font-bold text-gray-800 relative z-10 pt-40">
+      INVEST IN WHAT'S <br /> REAL & VISIBLE
+    </h1>
+  </div>
+  <div>
+
         <h3 ref={subheadingRef} className="text-lg">
           Buy and sell real estate as easily as trading stocks. Starting at{" "}
           <br />
@@ -74,6 +84,7 @@ const Hero = () => {
         <h5 className="text-md font-semibold flex justify-center ">
           Regulated SandBox by Qatar Financial Center(QFC)
         </h5>
+  </div>
         <div className="flex justify-center">
           <img
             className="flex justify-center"
