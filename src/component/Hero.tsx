@@ -9,6 +9,7 @@ import { SplitText } from "gsap/all";
 import qfc from "../assets/QFC-min.png";
 import TextReveal from "./TextReveal";
 import Features from "./Features";
+import Cursor from "./Cursor";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -117,6 +118,7 @@ const Hero = () => {
         <div>
             Marquee component
         </div>
+        <Cursor/>
       </div>
     </div>
   );
