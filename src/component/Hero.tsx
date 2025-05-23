@@ -110,7 +110,7 @@ const Hero = () => {
             text={`Explore the power of investing in tokenized real world assets\nand discover the next chapter in your investing journey`}
             fromColor="#D1D5DB"
             toColor="#000000"
-           className="text-xl"/>
+           className="text-lg font-vietnam"/>
         </div>
         <div className="">
           <Features />
