@@ -1,0 +1,174 @@
+import React, { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import gif from "../assets/Shot_1.gif"
+
+gsap.registerPlugin(ScrollTrigger);
+
+const cards = [
+  {
+    id: 1,
+    title: 'REAL ESTATE',
+    description:
+      'Invest in tokenized real estate and earn passive income through fractional ownership. Secure, transparent, and backed by real assets, giving you exposure to high-yield properties without the management hassle.',
+    tag: '01',
+    buttonText: 'Live now',
+    image: gif,
+    bgColor: '#d2e2fe',
+  },
+  {
+    id: 2,
+    title: 'STARTUPS',
+    description:
+      'Get early access to high-growth startup investments. Diversify your portfolio with equity in promising tech companies.',
+    tag: '02',
+    buttonText: 'Explore',
+    image: gif,
+    bgColor: '#f0dafe',
+  },
+  {
+    id: 3,
+    title: 'DEBT FUNDS',
+    description:
+      'Earn steady income from short-term debt opportunities. Backed by real-world assets and structured for low risk.',
+    tag: '03',
+    buttonText: 'Learn more',
+    image: gif,
+    bgColor: '#f1efee',
+  },
+];
+
+const CardStack = () => {
+  const containerRef = useRef(null);
+  const cardRefs = useRef([]);
+  const stackOffset = 40;
+  const scrollDuration = 100;
+
+//   useLayoutEffect(() => {
+
+//     if (containerRef.current) {
+//       containerRef.current.style.height = `${260 + (cards.length - 1) * scrollDuration + window.innerHeight}px`;
+//     }
+
+//     cardRefs.current.forEach((card, i) => {
+//       if (!card) return;
+
+//       if (i === 0) {
+//         ScrollTrigger.create({
+//           trigger: containerRef.current,
+//           start: 'top top',
+//           end: () => `+=${scrollDuration * (cards.length - 1)}`,
+//           pin: true,
+//           pinSpacing: false,
+//         });
+//       } else {
+//         gsap.fromTo(
+//           card,
+//           {
+//             y: 800,
+//             scale: 0.65,
+//             opacity: 0,
+//             pointerEvents: 'none',
+//           },
+//           {
+//             y: (i - 1) * stackOffset,
+//             scale: 1,
+//             opacity: 1,
+//             pointerEvents: 'auto',
+//             ease: 'power2.out',
+//             scrollTrigger: {
+//               trigger: containerRef.current,
+//               start: () => `top+=${scrollDuration * (i - 1)} top`,
+//               end: () => `top+=${scrollDuration * i} top`,
+//               scrub: true,
+//             },
+//           }
+//         );
+//       }
+//     });
+
+//     return () => {
+//       ScrollTrigger.getAll().forEach((t) => t.kill());
+//     };
+//   }, []);
+useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top top',
+        end: `+=1200`, // total scroll distance (adjust as needed)
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    cards.forEach((_, i) => {
+      if (i === 0) return; // Skip first card, it's already visible
+
+      tl.fromTo(
+        cardRefs.current[i],
+        {
+          y: 800,
+          scale: 0.65,
+          opacity: 0,
+          pointerEvents: 'none',
+        },
+        {
+          y: (i - 1) * stackOffset,
+          scale: 1,
+          opacity: 1,
+          pointerEvents: 'auto',
+          ease: 'power2.out',
+          duration: 1,
+        },
+        `+=0.5` // time offset between card reveals
+      );
+    });
+  }, containerRef);
+
+  return () => {
+    ScrollTrigger.getAll().forEach((t) => t.kill());
+  };
+}, []);
+
+  return (
+    <div ref={containerRef} className="relative w-full max-w-[700px] mx-auto mt-10">
+      {/* <h1 className="text-5xl font-bold mb-10 text-center">Card Stack</h1> */}
+      <div className="relative h-[600px]">
+        {cards.map((card, i) => {
+          const widthClass = i === 1 ? 'w-[750px]' : i === 2 ? 'w-[800px]' : 'w-[700px]';
+
+          return (
+         <div
+  key={card.id}
+  ref={(el) => (cardRefs.current[i] = el)}
+  className={`${widthClass} h-full text-black rounded-3xl shadow-xl px-10 py-7 flex flex-col items-center justify-center text-center absolute left-1/2 -translate-x-1/2`}
+  style={{ top: `${i * stackOffset}px`, zIndex: i, backgroundColor: card.bgColor }}
+>
+  <div className="text-xs font-semibold text-gray-600 mb-2">{card.tag}</div>
+  <h1 className="text-4xl font-extrabold mb-4">{card.title}</h1>
+  <p className="text-base text-gray-700 mb-6 max-w-[600px]">{card.description}</p>
+  <button className="px-5 py-2 border border-black rounded-full text-sm font-medium hover:bg-black hover:text-white transition-all duration-200 flex items-center gap-2 mb-6">
+    {card.buttonText}
+  </button>
+
+  {card.image && (
+    <img
+      src={card.image}
+      alt={card.title}
+      className="w-full max-w-[350px] h-auto object-contain rounded-xl"
+    />
+  )}
+</div>
+
+
+
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default CardStack;

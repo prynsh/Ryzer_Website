@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import rect from "../assets/rect.png";
 import TextReveal from "./TextReveal";
 import HowItWorks from "./HowItWorks";
+import CardStack from "./StackingCards";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -101,6 +102,7 @@ Breaking barriers to asset ownerships"
       <div className="">
         <h1 className="text-6xl font-phudu font-bold text-center text-neutral-800">MULTI-ASSETS, ON THE WAY</h1>
       </div>
+      <CardStack/>
     </div>
   );
 };
