@@ -5,10 +5,14 @@ import Hero from './component/Hero';
 import Hero2 from './component/Hero2';
 import Hero3 from './component/Hero3';
 import Topbar from './component/Topbar';
+import Hero4 from './component/Hero4';
+import Hero5 from './component/Hero5';
 
 function App() {
   const [isDarkBg, setIsDarkBg] = useState(false);
   const hero2Ref = useRef<HTMLDivElement>(null);
+  const hero4Ref = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,6 +28,7 @@ function App() {
     );
 
     if (hero2Ref.current) observer.observe(hero2Ref.current);
+    if (hero4Ref.current) observer.observe(hero4Ref.current);
     return () => observer.disconnect();
   }, []);
 
@@ -39,6 +44,14 @@ function App() {
         </div>
 
         <Hero3 />
+        <div className='py-10 ' > </div>
+        <div ref={hero4Ref}>
+
+        <Hero4 />
+        </div>
+      </div>
+      <div>
+        <Hero5/>
       </div>
     </>
   );
