@@ -7,6 +7,7 @@ import Hero3 from './component/Hero3';
 import Topbar from './component/Topbar';
 import Hero4 from './component/Hero4';
 import Hero5 from './component/Hero5';
+import Hero6 from './component/Hero6';
 
 function App() {
   const [isDarkBg, setIsDarkBg] = useState(false);
@@ -52,6 +53,9 @@ function App() {
       </div>
       <div>
         <Hero5/>
+      </div>
+      <div>
+        <Hero6/>
       </div>
     </>
   );
