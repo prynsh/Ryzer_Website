@@ -1,4 +1,4 @@
-import React from 'react'
+
 import BentoGrid from './Bento'
 
 const Hero4 = () => {
