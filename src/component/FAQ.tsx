@@ -35,9 +35,9 @@ ownership. You can invest from as low as $500`,
 ];
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null); // Track which index is open
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleIndex = (index) => {
+  const toggleIndex = (index:number) => {
     setOpenIndex(openIndex === index ? null : index); // Toggle open state
   };
 

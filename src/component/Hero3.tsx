@@ -20,7 +20,7 @@ const features = [
 ];
 
 const Hero3 = () => {
-  const cardRefs = useRef([]);
+  const cardRefs =  useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     cardRefs.current.forEach((el, i) => {
@@ -73,7 +73,7 @@ const Hero3 = () => {
             {features.map((feature, i) => (
               <div
                 key={i}
-                ref={(el) => (cardRefs.current[i] = el)}
+                ref={(el) => {cardRefs.current[i] = el}}
                 className="absolute whitespace-nowrap bg-[#f9f9f9] px-6 py-2 rounded-full hover:shadow-md font-medium text-neutral-700 text-sm flex items-center gap-2"
                 style={{
                   top: feature.y,

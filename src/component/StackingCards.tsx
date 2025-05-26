@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import  { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gif from "../assets/Shot_1.gif";
@@ -42,12 +42,12 @@ const cards = [
 
 const CardStack = () => {
   const containerRef = useRef(null);
-  const cardRefs = useRef([]);
+  const cardRefs =  useRef<(HTMLDivElement | null)[]>([]);
   const stackOffset = 40;
 
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
+     gsap.context(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -101,7 +101,7 @@ const CardStack = () => {
           return (
             <div
               key={card.id}
-              ref={(el) => (cardRefs.current[i] = el)}
+              ref={(el) => {cardRefs.current[i] = el}}
               className={`${widthClass} h-full text-black rounded-3xl shadow-xl px-10 py-7 flex flex-col items-center justify-center text-center absolute left-1/2 -translate-x-1/2`}
               style={{
                 top: `${i * stackOffset}px`,

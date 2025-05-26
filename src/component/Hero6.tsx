@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 const Hero6 = () => {
   return (
@@ -61,6 +62,9 @@ const Hero6 = () => {
             <div className="font-vietnam">
                 Follow us and Stay Connected 
             </div>
+          </div>
+          <div>
+            <Footer/>
           </div>
         </div>
       </div>
