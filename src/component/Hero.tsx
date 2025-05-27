@@ -127,7 +127,7 @@ const Hero = () => {
           <Features />
         </div>
         <div>
-            Marquee component
+            {/* Marquee component */}
         </div>
         <Cursor/>
       </div>

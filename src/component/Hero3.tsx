@@ -37,7 +37,7 @@ const Hero3 = () => {
             scrollTrigger: {
               trigger: el,
               start: "top 80%",
-              toggleActions: "play none none none",
+              toggleActions: "play reverse play reverse",
             },
           }
         );
