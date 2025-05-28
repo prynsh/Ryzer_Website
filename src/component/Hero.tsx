@@ -54,37 +54,39 @@ const Hero = () => {
   }, []);
 
   return (
-   <div className="relative w-full overflow-hidden">
-
-
+    <div className="relative ">
       <div className="relative z-10 text-center h-full ">
-        <div className="relative w-full h-[400px]">
-    <div
-      className="absolute inset-0 z-0 pointer-events-none"
-      style={{
-        backgroundImage: "url('https://www.ryzer.app/wp-content/uploads/2024/09/BG-6.png')",
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-      }}
-    ></div>
+        <div className="relative w-full lg:h-[400px] md:h-[300px] sm:h-[300px]">
+          <div
+            className="absolute pt-10  inset-0 z-0 pointer-events-none"
+            style={{
+              backgroundImage:
+                "url('https://www.ryzer.app/wp-content/uploads/2024/09/BG-6.png')",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></div>
 
-    {/* h1 text stays above the background image */}
-    <h1 className="h1 text-8xl font-bold text-gray-800 relative z-10 pt-40">
-      INVEST IN WHAT'S <br /> REAL & VISIBLE
-    </h1>
-  </div>
-  <div>
+          {/* h1 text stays above the background image */}
+          <h1 className="h1 text-5xl  md:text-6xl lg:text-8xl font-bold text-gray-800 relative z-10 lg:pt-40 pt-30  ">
+            INVEST IN WHAT'S <br /> REAL & VISIBLE
+          </h1>
+        </div>
+        <div className="p-3">
+          <p ref={subheadingRef} className="lg:text-lg text-md font-vietnam">
+            Buy and sell real estate as easily as trading stocks. Starting at{" "}
+            <span className="hidden lg:inline">
+              <br />
+            </span>
+            <span className="inline lg:hidden"> </span>
+            $100, with instant liquidity, Finally an exchange for Real Estate.
+          </p>
 
-        <h3 ref={subheadingRef} className="text-lg">
-          Buy and sell real estate as easily as trading stocks. Starting at{" "}
-          <br />
-          $100, with instant liquidity, Finally an exchange for Real Estate.
-        </h3>
-        <h5 className="text-md font-semibold flex justify-center ">
-          Regulated SandBox by Qatar Financial Center(QFC)
-        </h5>
-  </div>
+          <h5 className="text-md font-semibold flex justify-center pt-10  ">
+            Regulated SandBox by Qatar Financial Center(QFC)
+          </h5>
+        </div>
         <div className="flex justify-center">
           <img
             className="flex justify-center"
@@ -102,34 +104,33 @@ const Hero = () => {
             alt="iPhone"
           />
         </motion.div>
-        <div className="space-y-5">
+        <div className="space-y-5 p-3">
           <p className="font-semibold text-gray-800">
             Trade with Confidence, Backed by the best.
           </p>
           <Backed />
         </div>
         <div>
-          <p className="font-semibold text-gray-800">
+          <p className="font-semibold text-gray-800  font-vietnam">
             Experience real estate like crypto
           </p>
         </div>
-        <div className="space-y-8">
-          <h1 className="h1 text-7xl font-bold text-gray-800">
+        <div className="space-y-8 p-3">
+          <h1 className="h1 lg:text-7xl text-5xl md:text-6xl font-bold text-gray-800">
             THE FUTURE OF <br /> REAL WORLD ASSETS
           </h1>
           <TextReveal
-            text={`Explore the power of investing in tokenized real world assets\nand discover the next chapter in your investing journey`}
+            text={`Explore the power of investing in tokenized real world assets \n and discover the next chapter in your investing journey`}
             fromColor="#D1D5DB"
             toColor="#000000"
-           className="text-lg font-vietnam"/>
+            className="md:text-lg text-sm font-vietnam whitespace-nowrap"
+          />
         </div>
         <div className="">
           <Features />
         </div>
-        <div>
-            {/* Marquee component */}
-        </div>
-        <Cursor/>
+        <div>{/* Marquee component */}</div>
+        <Cursor />
       </div>
     </div>
   );

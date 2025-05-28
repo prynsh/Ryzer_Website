@@ -96,7 +96,7 @@ const HowItWorks = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top 80%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
         },
         x: -100,
         opacity: 0,
@@ -112,7 +112,7 @@ const HowItWorks = () => {
   return (
     <div ref={containerRef} className="space-y-20 px-6 md:px-20">
       <div>
-        <h1 className="text-6xl font-bold text-neutral-800 text-center">
+        <h1 className="md:text-6xl text-4xl font-bold text-neutral-800 text-center">
           How it Works?
         </h1>
       </div>

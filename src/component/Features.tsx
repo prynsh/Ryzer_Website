@@ -44,11 +44,11 @@ const Features = () => {
   return (
     <div ref={containerRef}>
 
-    <div  className="flex justify-center items-center gap-6 flex-wrap bg-white p-6 ">
+    <div  className="lg:flex justify-center items-center gap-6 flex-wrap bg-white p-6 ">
       {featuresData.map((feature, index) => (
         <div
         key={index}
-        className="feature-box flex-1 min-w-[280px] text-left max-w-sm bg-[#f9f9f9] rounded-2xl p-10 shadow-sm"
+        className="feature-box flex-1 sm:w-[150px] md:min-w-[280px] text-left max-w-sm bg-[#f9f9f9] rounded-2xl p-10 shadow-sm"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -62,10 +62,10 @@ const Features = () => {
               fill="black"
               ></path>
           </svg>
-          <h3 className="text-xl font-extrabold text-[#0f0f1f] mb-2 font-phudu">
+          <h3 className="md:text-xl text-md font-extrabold text-[#0f0f1f] mb-2 font-phudu">
             {feature.title}
           </h3>
-          <p className="text-[#4b4b4b] text-md font-semibold leading-relaxed">
+          <p className="text-[#4b4b4b] md:text-md text-sm font-semibold leading-relaxed">
             {feature.description}
           </p>
         </div>

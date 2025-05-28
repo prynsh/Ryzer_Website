@@ -2,3 +2,11 @@
   font-family: "Phudu Medium";
   src: url("./assets/font/Phudu-Medium.ttf");
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
+  width: 100%;
+  outline: 1px solid red;
+}

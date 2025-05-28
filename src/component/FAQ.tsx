@@ -51,10 +51,10 @@ const FAQ = () => {
           <div
             key={index}
             onClick={() => toggleIndex(index)}
-            className=" p-4 space-y-3 m-5 cursor-pointer w-4xl rounded-lg"
+            className=" p-4 space-y-3 m-5 cursor-pointer md:w-4xl rounded-lg"
           >
             <div className="flex justify-between items-center ">
-              <p className="text-xl font-vietnam ">{data.question}</p>
+              <p className="md:text-xl text-lg font-vietnam ">{data.question}</p>
               {openIndex === index ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -37,7 +37,7 @@ function App() {
     <>
       <Topbar isDarkBg={isDarkBg} />
 
-      <div className="min-h-screen space-y-10 pt-24">
+      <div className="min-h-screen lg:space-y-10 lg:pt-24 md:pt-10">
         <Hero />
 
         <div ref={hero2Ref} className="min-h-screen">

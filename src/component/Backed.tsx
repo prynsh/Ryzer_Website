@@ -49,11 +49,11 @@ const Backed = () => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="logo-item flex flex-col items-center px-2 border-r border-gray-400 last:border-r-0"
+            className="logo-item flex flex-col items-center px-2 border-r border-gray-200 last:border-r-0"
           >
             <img
               src={item.image}
-              className="w-40 h-10 mb-1 object-contain"
+              className="md:w-40 w-44 h-10 mb-1 object-contain"
               alt={`logo-${index}`}
             />
           </div>
