@@ -112,11 +112,10 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({
         overflow-hidden
         relative
         transition-colors duration-300
-
         text-sm
         px-3 sm:px-4 md:px-6
         py-1 sm:py-1.5 md:py-2
-        w-[100px] sm:w-[120px] md:w-[130px]
+        w-[130px] 
         h-[32px] sm:h-[36px] md:h-[40px]
         mx-[4px] my-[8px]
 

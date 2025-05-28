@@ -35,7 +35,9 @@ function App() {
 
   return (
     <>
-      <Topbar isDarkBg={isDarkBg} />
+    <div className='pt-5'>
+      <Topbar  isDarkBg={isDarkBg} />
+    </div>
 
       <div className="min-h-screen lg:space-y-10 lg:pt-24 md:pt-10">
         <Hero />

@@ -98,7 +98,7 @@ type TopbarProps = {
 
 const Topbar = ({ isDarkBg }: TopbarProps) => {
   return (
-    <div className="px-4 sm:px-6 md:px-10 py-3 sm:py-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50 ">
+    <div className="px-4 sm:px-6 md:px-10 py-3 sm:py-4 flex items-center justify-between fixed sm:top-2 md:top-0 left-0 right-0 z-50 ">
       <div className="flex items-center space-x-2 sm:space-x-3">
         <img src={logo} alt="Ryzer logo" className="h-8 w-8 sm:h-10 sm:w-10" />
         <div className="italic leading-tight">
